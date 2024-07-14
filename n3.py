@@ -63,7 +63,7 @@ class Node:
     bounding_box: list = field(default_factory=list)
     # Unknown origin, possibly deprecated, using fourCC as suffix
     unknown_cash: str = ""
-    unknown_shdr: str = ""
+    shader: str = ""
 
 
 class Parser():
@@ -119,8 +119,8 @@ class Parser():
             print("        UNKNOWN_TAG 'CASH'="+str(node.unknown_cash))
         elif tag_4cc =='SHDR':
             # seems to be single string, shader name
-            node.unknown_shdr = self.read_n3_string()
-            print("        shader="+str(node.unknown_shdr))
+            node.shader = self.read_n3_string()
+            print("        shader="+str(node.shader))
         else:
             # No valid fourCC found
             return False
