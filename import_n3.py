@@ -87,6 +87,8 @@ def create_image(n3_texture_res, options: n3.Options):
     possible_path = os.path.join(project_tex_dir, img_dir)
     possible_path = os.path.normpath(possible_path)
     if os.path.isdir(possible_path):
+        # In DSO case this is only working path.
+        possible_paths_list.append(possible_path)
         possible_path = os.path.join(possible_path, img_name)
         possible_paths_list.append(possible_path)
 
