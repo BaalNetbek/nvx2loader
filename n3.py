@@ -120,7 +120,7 @@ class Parser():
         elif tag_4cc =='SHDR':
             # seems to be single string, shader name
             node.unknown_shdr = self.read_n3_string()
-            print("        UNKNOWN_TAG 'SHDR'=" + str(node.unknown_shdr))
+            print("        shader="+str(node.unknown_shdr))
         else:
             # No valid fourCC found
             return False
